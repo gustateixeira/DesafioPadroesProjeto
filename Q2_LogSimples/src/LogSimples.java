@@ -5,14 +5,20 @@ import java.util.List;
 
 public class LogSimples implements Iterable<String>{
     private List<String> mensagens;
+    private static LogSimples instancia;
 
-    public LogSimples(){
+    private LogSimples(){
         mensagens = new LinkedList<>();
     }
 
+    public static LogSimples getInstance(){
+        if(instancia == null)
+            instancia = new LogSimples();
+        return (instancia);      
+    }
     public void log(String m){
         String logM = LocalDate.now().toString() + " : " + m;
-        mensagens.add(logM);
+        mensagens.add(logM);    
     }
 
     @Override
