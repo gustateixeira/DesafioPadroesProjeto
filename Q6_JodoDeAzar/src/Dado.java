@@ -1,6 +1,9 @@
 import java.util.Random;
-
-public class Dado {
+/*
+Agora implementa interface Dado para que possa receber
+as adiçoes de objetos "decoradores"
+ */
+public class Dado implements InterfaceDado{
     private int lados;
     private int valorJogada;
     private final Random random;
