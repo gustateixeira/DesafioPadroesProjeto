@@ -1,21 +1,17 @@
 import java.util.List;
 
-public class VisualizadorDeSomatorio {
+public class VisualizadorDeSomatorio implements Observador{
     private List<Integer> valores;
 
-    public VisualizadorDeSomatorio(List<Integer> valores){
+    public void notifica(List<Integer> valores) {
         this.valores = valores;
     }
 
-    public void defineValores(List<Integer> valores){
-        this.valores = valores;
+    public void ativa(){
+        this.exibeValor();
     }
 
-    public void acrescentaValor(Integer valor){
-        this.valores.add(valor);
-    }
-
-    public void exibeSomatorio(){
+    public void exibeValor(){
         Integer soma = valores.stream()
             .mapToInt(Integer::intValue)
             .sum();
