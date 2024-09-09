@@ -22,13 +22,13 @@ public class Venda {
 
     public double getTotal() {
         double total = 0.0;
-        for(ItemDeVenda item : itens){
+        for (ItemDeVenda item : itens) {
             total += item.getSubTotal();
         }
         return total;
     }
 
-    public void registrarVenda(Produto produto, int quantidade) {
+    public void registrarVenda(ProdutoComponent produto, int quantidade) {
         ItemDeVenda item = new ItemDeVenda(produto, quantidade);
         itens.add(item);
     }
