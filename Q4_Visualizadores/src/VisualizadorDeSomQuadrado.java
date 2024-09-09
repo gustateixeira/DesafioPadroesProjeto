@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class VisualizadorDeSomatorio implements Observador{
+public class VisualizadorDeSomQuadrado implements Observador{
     private List<Integer> valores;
 
     public void notifica(List<Integer> valores) {
@@ -13,8 +13,8 @@ public class VisualizadorDeSomatorio implements Observador{
 
     public void exibeValor(){
         Integer soma = valores.stream()
-            .mapToInt(Integer::intValue)
+            .mapToInt(valor -> valor * valor)
             .sum();
-        System.out.println("Somatorio: "+soma+", quantidade de elementos analisados: "+valores.size());
+        System.out.println("Somatorio ao Quadrado: "+soma+", quantidade de elementos analisados: "+valores.size());
     }
 }

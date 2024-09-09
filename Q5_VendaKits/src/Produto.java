@@ -1,4 +1,4 @@
-public class Produto {
+public class Produto implements ProdutoComponent {
     private int id;
     private String nome;
     private double preco;
